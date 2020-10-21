@@ -12,12 +12,12 @@ using System.Windows.Forms;
 namespace FormularioExcepciones
 {
     
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
         static String fichero = "Usuarios.txt";
-        StreamReader leer;
         StreamWriter escribir;
-        public Form1()
+        StreamReader leer;
+        public frmPrincipal()
         {
             
             InitializeComponent();
@@ -171,35 +171,55 @@ namespace FormularioExcepciones
                 epEmail.Clear();
                 epCuenta.Clear();
                 epApellidos.Clear();
+                btnEscribir.Visible = true;
+            }
+        }
 
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            leer = new StreamReader(fichero);
+            
+            leer.Close();
+            if (true)
+            {
                 escribir = new StreamWriter(fichero);
-                
-
                 escribir.WriteLine("************USUARIOS************");
                 escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Nombre:");
-                escribir.WriteLine(texto1);
+                escribir.WriteLine(txtNombre.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Apellido:");
-                escribir.WriteLine(texto7);
+                escribir.WriteLine(txtApellido.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Telefono:");
-                escribir.WriteLine(texto3);
+                escribir.WriteLine(txmMovil.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Matricula:");
-                escribir.WriteLine(texto4);
+                escribir.WriteLine(txmMatricula.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Email:");
-                escribir.WriteLine(texto5);
+                escribir.WriteLine(txtEmail.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Cuenta Bancaria:");
-                escribir.WriteLine(texto6);
+                escribir.WriteLine(txmCuenta.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("NIF:");
-                escribir.WriteLine(texto2);
+                escribir.WriteLine(txmNIF.Text.ToString());
                 escribir.Close();
-
+                MessageBox.Show("Se ha añadido el usuario", "Mensaje de informacion");
+                btnLeer.Visible = true;
             }
+            else
+            {
+                MessageBox.Show("El usuario ya existe", "Mensaje de informacion");
+            }
+            
+        }
+
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            frmLeerDatos frm = new frmLeerDatos();
+            frm.ShowDialog();
         }
     }
 }

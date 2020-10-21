@@ -1,6 +1,6 @@
 ﻿namespace FormularioExcepciones
 {
-    partial class Form1
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -80,7 +80,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(105, 195);
+            this.txtEmail.Location = new System.Drawing.Point(105, 159);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(387, 22);
             this.txtEmail.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             // txmMovil
             // 
-            this.txmMovil.Location = new System.Drawing.Point(105, 156);
+            this.txmMovil.Location = new System.Drawing.Point(105, 198);
             this.txmMovil.Mask = "000-000-000";
             this.txmMovil.Name = "txmMovil";
             this.txmMovil.Size = new System.Drawing.Size(162, 22);
@@ -154,7 +154,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 159);
+            this.label3.Location = new System.Drawing.Point(30, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 10;
@@ -163,7 +163,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 198);
+            this.label4.Location = new System.Drawing.Point(30, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 11;
@@ -233,6 +233,8 @@
             this.btnEscribir.TabIndex = 15;
             this.btnEscribir.Text = "ESCRIBIR";
             this.btnEscribir.UseVisualStyleBackColor = true;
+            this.btnEscribir.Visible = false;
+            this.btnEscribir.Click += new System.EventHandler(this.btnEscribir_Click);
             // 
             // btnLeer
             // 
@@ -242,6 +244,8 @@
             this.btnLeer.TabIndex = 16;
             this.btnLeer.Text = "LEER";
             this.btnLeer.UseVisualStyleBackColor = true;
+            this.btnLeer.Visible = false;
+            this.btnLeer.Click += new System.EventHandler(this.btnLeer_Click);
             // 
             // Form1
             // 

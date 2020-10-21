@@ -36,6 +36,7 @@
             this.txbDatos.Location = new System.Drawing.Point(84, 40);
             this.txbDatos.Multiline = true;
             this.txbDatos.Name = "txbDatos";
+            this.txbDatos.ReadOnly = true;
             this.txbDatos.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txbDatos.Size = new System.Drawing.Size(598, 361);
             this.txbDatos.TabIndex = 0;

@@ -177,14 +177,29 @@ namespace FormularioExcepciones
 
         private void btnEscribir_Click(object sender, EventArgs e)
         {
+            String cadena;
             leer = new StreamReader(fichero);
-            
-            leer.Close();
-            if (true)
+            try
             {
-                escribir = new StreamWriter(fichero);
+                while (true)
+                {
+                    cadena=leer.ReadLine();
+                    if (cadena==null)
+                    {
+                        MessageBox.Show("Se ha llegado al final del fichero y no se han encontrado duplicados","Mensaje de informacion");
+                        break;
+                    }
+                    if (cadena.Equals(txmNIF.Text.ToString()))
+                    {
+                        throw new ErrorUsuarioRepetido("El usuario que has intentado agregar ya esta agregado");
+                    }
+                }
+
+                leer.Close();
+
+                escribir = new StreamWriter(fichero, true);
                 escribir.WriteLine("************USUARIOS************");
-                escribir.WriteLine(Environment.NewLine);
+                //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("Nombre:");
                 escribir.WriteLine(txtNombre.Text.ToString());
                 //escribir.WriteLine(Environment.NewLine);
@@ -205,15 +220,17 @@ namespace FormularioExcepciones
                 //escribir.WriteLine(Environment.NewLine);
                 escribir.WriteLine("NIF:");
                 escribir.WriteLine(txmNIF.Text.ToString());
+                escribir.WriteLine(Environment.NewLine);
                 escribir.Close();
                 MessageBox.Show("Se ha añadido el usuario", "Mensaje de informacion");
                 btnLeer.Visible = true;
+
             }
-            else
+            catch (ErrorUsuarioRepetido ex)
             {
-                MessageBox.Show("El usuario ya existe", "Mensaje de informacion");
+                MessageBox.Show("El usuario que has intentado agregar ya esta agregado", ex.Message);
+                leer.Close();
             }
-            
         }
 
         private void btnLeer_Click(object sender, EventArgs e)

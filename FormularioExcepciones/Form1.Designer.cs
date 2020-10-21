@@ -51,6 +51,8 @@
             this.epMatricula = new System.Windows.Forms.ErrorProvider(this.components);
             this.epNIF = new System.Windows.Forms.ErrorProvider(this.components);
             this.epCuenta = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnEscribir = new System.Windows.Forms.Button();
+            this.btnLeer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.epNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApellidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epMovil)).BeginInit();
@@ -114,10 +116,11 @@
             // txmCuenta
             // 
             this.txmCuenta.Location = new System.Drawing.Point(167, 297);
-            this.txmCuenta.Mask = "000-0000.0000.000.0000000000";
+            this.txmCuenta.Mask = "LL000-0000.0000.000.0000000000";
             this.txmCuenta.Name = "txmCuenta";
             this.txmCuenta.Size = new System.Drawing.Size(325, 22);
             this.txmCuenta.TabIndex = 6;
+            this.txmCuenta.Text = "ES";
             this.txmCuenta.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txmCuenta_MaskInputRejected);
             // 
             // btnValidar
@@ -222,11 +225,31 @@
             // 
             this.epCuenta.ContainerControl = this;
             // 
+            // btnEscribir
+            // 
+            this.btnEscribir.Location = new System.Drawing.Point(47, 361);
+            this.btnEscribir.Name = "btnEscribir";
+            this.btnEscribir.Size = new System.Drawing.Size(159, 23);
+            this.btnEscribir.TabIndex = 15;
+            this.btnEscribir.Text = "ESCRIBIR";
+            this.btnEscribir.UseVisualStyleBackColor = true;
+            // 
+            // btnLeer
+            // 
+            this.btnLeer.Location = new System.Drawing.Point(47, 403);
+            this.btnLeer.Name = "btnLeer";
+            this.btnLeer.Size = new System.Drawing.Size(159, 23);
+            this.btnLeer.TabIndex = 16;
+            this.btnLeer.Text = "LEER";
+            this.btnLeer.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 450);
+            this.Controls.Add(this.btnLeer);
+            this.Controls.Add(this.btnEscribir);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -280,6 +303,8 @@
         private System.Windows.Forms.ErrorProvider epMatricula;
         private System.Windows.Forms.ErrorProvider epNIF;
         private System.Windows.Forms.ErrorProvider epCuenta;
+        private System.Windows.Forms.Button btnEscribir;
+        private System.Windows.Forms.Button btnLeer;
     }
 }
 

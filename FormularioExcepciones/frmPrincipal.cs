@@ -160,8 +160,12 @@ namespace FormularioExcepciones
 
                 texto7 = txtApellido.Text.ToString();
                 texto7 = texto7.Trim();
+            //Supuesto codigo para validar la cuenta bancaria
+            //
+            //using System.Text.RegularExpressions;
+            //Regex.Match(txmCuenta.Text, @"^((67\d{2})(4\d{3})(5[1-5]\d{2})(6011))(-?\s?\d{4}){3}(3[4,7])\ d{2}-?\s?\d{6}-?\s?\d{5}$").Success == tru
 
-                comprobarNIF(txmNIF.Text.ToString());
+            comprobarNIF(txmNIF.Text.ToString());
                 if (!texto1.Equals("") && !texto2.Equals("") && !texto3.Equals("") && !texto4.Equals("") && !texto5.Equals("") && !texto6.Equals("") && !texto7.Equals(""))
                 {
                 epNombre.Clear();
